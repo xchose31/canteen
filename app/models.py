@@ -12,6 +12,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(80), unique=True, nullable=False)
     email = Column(String(120), unique=True, nullable=False)
+    role = Column(String(20), nullable=False, default='student')
     password_hash = Column(String(200), nullable=False)
 
     def set_password(self, password):
