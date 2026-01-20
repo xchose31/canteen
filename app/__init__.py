@@ -9,7 +9,7 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///canteen.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-    migrate = Migrate(app)
+    migrate = Migrate(app, db)
     db.init_app(app)
     jwt.init_app(app)
     cors.init_app(app)
